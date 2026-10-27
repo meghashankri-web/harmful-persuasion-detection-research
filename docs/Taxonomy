@@ -1,0 +1,30 @@
+Propaganda Technique Taxonomy for Persuasive Media Detection Project
+
+Scope and Purpose
+  This taxonomy defines the propaganda and persuasion techniques detected by this model's classifier. It applies only to social media texts, such as comments, captions, and X posts, and excludes other forms of media, such as the news-article domain. Short video transcriptions will also be out of domain for this project, as such forms of media heavily rely on visual context and introduce multimodal complexity beyond this project's timeline. This project focuses on text where that context is directly observable within the text itself.
+  Existing taxonomies in this space vary widely in size. As summarized by Da San Martino et al. (2020), earlier scholarship lists as few as seven techniques while some catalogs run well into the dozens. Within computational work, taxonomies range from 14 techniques (SemEval-2020's merged, data-sparsity-driven set) to 18 (Da San Martino et al.'s original fine-grained taxonomy) to 20+ (taxonomies extended for memes and code-switched social media text). Due to the scale of this project(a single-researcher, hand-labeled dataset of limited size, built over a one-semester timeline), a personalized taxonomy was developed, which included 7 techniques based on a literature review of prior work.  
+  
+  This taxonomy is not intended to be comprehensive or to resolve the broader scholarly disagreement over "the" correct list of propaganda techniques. Its purpose is to be narrow enough for consistent human annotation and for a transformer-based classifier trained on a limited dataset to learn meaningfully.
+
+Techniques were selected based on:
+  1. Whether they had strong recurrence across prior taxonomies. Those present in SemEval-2020's 14, the original 18-technique taxonomy, and the 20-technique code-switched social media taxonomy were prioritized. 
+  2. Whether they were relevant to short-form social media text rather than long journalistic prose.
+  3. Whether they had low conceptual overlap between chosen categories and were overall feasible to support consistent annotation from a small, independently handled data set. 
+
+Techniques that were explicitly excluded:
+  1. Bandwagon and Reductio ad Hitlerum were excluded due to poor performance across reviewed studies, frequently scoring near or at a 0% F1.
+  2.Whataboutism / Straw Man / Red Herring were excluded due to the same reason above, as well as conceptual overlap with each other, making it difficult for even professional annotators. 
+  3. Repetition was excluded due to its being mostly present in long-form media and requiring visibility into a full article or thread's context.  
+  4. Glittering Generalities, Smears, Obfuscation/Intentional Vagueness performed mediocrely in past work, but were excluded to keep the category count manageable. This may be considered for future work. 
+
+The Techniques 
+**Definitions adapted from Da San Martino et al. (2020) and the associated annotation guidelines, reworded and narrowed for short-form social media text.**
+  N. XXX
+    Definition: XXXX
+    Examples: XXX
+    Notes: XXXXX
+  1. Loaded Language 
+    Definition: The use of words or phrases carrying strong positive or negative emotional weight, intended to influence the reader's reaction beyond what the literal content       of the statement supports.
+    Examples: "This disgraceful policy is destroying our community." "A beautiful, historic victory for everyday people." "They are shamelessly lying to your face."
+    Notes: The emotional charge comes from word choice itself, not from constructing fear, questioning credibility, or labeling a person/group. I predict that, due to its strong lexical signals, it will be easy to detect and will often be inside any of the other techniques. It should only be labeled on its own when the emotional wording isn't   primarily serving one of the more specific functions below.
+
