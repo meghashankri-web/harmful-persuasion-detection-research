@@ -19,12 +19,37 @@ Techniques that were explicitly excluded:
 
 The Techniques 
 **Definitions adapted from Da San Martino et al. (2020) and the associated annotation guidelines, reworded and narrowed for short-form social media text.**
-  N. XXX
-    Definition: XXXX
-    Examples: XXX
-    Notes: XXXXX
-  1. Loaded Language 
-    Definition: The use of words or phrases carrying strong positive or negative emotional weight, intended to influence the reader's reaction beyond what the literal content       of the statement supports.
+
+1. Loaded Language 
+    Definition: Words or phrases with strong positive or negative emotional weight, intended to influence the reader's reaction beyond what the statement's literal content supports.
     Examples: "This disgraceful policy is destroying our community." "A beautiful, historic victory for everyday people." "They are shamelessly lying to your face."
     Notes: The emotional charge comes from word choice itself, not from constructing fear, questioning credibility, or labeling a person/group. I predict that, due to its strong lexical signals, it will be easy to detect and will often be inside any of the other techniques. It should only be labeled on its own when the emotional wording isn't   primarily serving one of the more specific functions below.
+2. Appeal to Fear/Predujice
+    Definition: Building support for a position by provoking anxiety, panic, or preconceived negative judgment about an alternative or opposing group.
+    Examples: "If this bill passes, none of us will be safe." "They're coming for your jobs — act now before it's too late." "Don't let these people anywhere near your family."
+    Notes: Unlike loaded language, this technique specifically constructs a threat, targeting fear and anxiety. I expect this to be moderately difficult to detect, as specific words, such  as danger, threat, and urgency language, help, but distinguishing genuine warnings from propaganda requires judgment. 
+3. Name-Calling / Labeling
+    Definition: Labeling a person, group, or idea with a term designed to make the audience fear, hate, or dismiss it (or, less commonly, to make them automatically admire it), without supporting argument.
+    Examples: "Typical radical extremist nonsense." "He's just a corporate puppet." "Another out-of-touch elite."
+    Notes: The defining feature is a label applied to a specific target (a person, group, or idea), rather than emotionally loaded language about a situation in general. This will be relatively easy, as it involves recognizable labeling patterns and a clear target, which prior literature shows is one of the more reliably learnable categories.
+4. Flag Waving 
+    Definition: Appealing to strong feelings of national, group, or in-group identity to justify or promote a position, often by framing the issue as "us vs. them."
+    Examples: "Real patriots would never support this." "Our community stands together against outsiders." "This is about who we are as a people."
+    Notes: Specifically invokes group/national identity and belonging, distinguishing it from general Loaded Language or Name-Calling. This will be easy to moderate to identify, since these instances have been rare in previous data sets but have been easy to identify.
+5. Doubt 
+    Definition: Questioning the credibility, legitimacy, or trustworthiness of a person, institution, or claim — often through rhetorical questions rather than direct counter-evidence.
+    Examples: "Is this really the person we want making decisions for us?" "Can we actually trust what they're telling us here?" "Funny how that 'official' explanation keeps changing."
+    Notes: Doubt undermines credibility specifically; it doesn't necessarily use emotionally loaded language or construct a threat. I think this will be moderately difficult, as it performed reasonably well in prior fine-tuned transformer results, though rhetorical-question framing can be subtle.
+6. Slogans 
+    Definition: A brief, catchy, often repeated phrase used to generate emotional support or memorability, frequently incorporating elements of the other techniques (labeling, loaded language) in condensed form.
+    Examples: "Enough is enough." "People over profits." "Say no to silence."
+    Notes: This technique is distinguished primarily by its brevity—being short and punchy—rather than its rhetoric. This will be easy to detect since brevity and catchy phrasing patterns make slogans relatively distinctive and learnable, even when they appear less frequently in a dataset.
+7. Causal Oversimplification 
+    Definition: Attributing a complex issue to a single cause or a single responsible party, when multiple contributing factors actually exist.
+    Examples: "The reason crime is up is because of one bad policy." "If it weren't for them, none of this would be happening." "This entire mess traces back to one decision."
+    Notes: This is an argument-based technique that can appear with or without loaded language. I think this will be moderately difficult to detect because it has a mid-range frequency in prior datasets and can be lexically difficult since it depends more on sentence-level logical structure than on specific trigger words.
 
+Open Questions / Known Limitations
+Loaded Language may overlap with several other categories (Appeal to Fear, Flag-Waving, Slogans), since those techniques often use loaded language as part of their mechanism. During annotation, Loaded Language should only be applied when none of the more specific techniques fit better.
+Causal Oversimplification may require more contextual/background knowledge to correctly identify than the other six categories, which could affect annotation consistency.
+This taxonomy may be revisited after an initial annotation pass if particular categories prove especially difficult to apply consistently.
